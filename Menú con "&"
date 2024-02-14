@@ -1,0 +1,70 @@
+#include <iostream>
+
+using namespace std;
+
+void Potencia (float x, float n, float &r);
+void Factorial (int x, float &r);
+void serie (int x, float n, float &r);
+
+
+int main()
+{   float x, n, r;
+    int op;
+    do {
+        cout<<"-----Menú----"<<endl;
+        cout<<"1.- Potencia "<<endl;
+        cout<<"2.- Factorial "<<endl;
+        cout<<"3.- Serie "<<endl;
+        cout<<"0.- Salir"<<endl;
+        cout<<"Elija una opción: "<<endl;
+        cin >> op;
+        switch (op){
+            case 1: cout << "ingresa base: ";
+                    cin >> x;
+                    cout << "ingresa exponente: ";
+                    cin >> n;
+                    Potencia (x, n, r);
+                    cout << "la potencia es: " << r << endl;
+            break;
+            case 2: cout << "Factorial de: ";
+                    cin >> x;
+                    Factorial (x, r);
+                    cout << "El factorial de: " << x << " = " << r << endl;
+            break;
+            case 3: cout << "Ingrese x: ";
+                    cin >> x;
+                    cout << "Ingrese n: ";
+                    cin >> n;
+                    serie (x, n, r);
+                    cout << "El valor de la series es: " << r << endl;
+            case 0: cout << "Gracias por usar el menu" << endl;
+            break;
+            default: cout << "Opcion no valida" << endl;
+        }
+    } while (op != 0);
+    return 0;
+}
+
+
+void Potencia (float x, float n, float &r){
+    r = 1;
+    for (int i = 1; i <= n; i++)
+        r = r* x;
+}
+
+void Factorial (int x, float &r){
+    r = 1;
+    for (int i = 1; i <= x; i++)
+        r = r * i;
+}
+
+void serie (int x, float n, float &r){
+    float z, t;
+    r=0;
+    for (int i = 2; i <= n; i+2){
+        Potencia (x, n, z);
+        Factorial (x, t);
+        r = r + (z/t);
+    }
+    r = r + 3 + x;
+}
