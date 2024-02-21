@@ -1,0 +1,12 @@
+def potencia(x, n):
+    if n == 0:
+        return 1
+    else:
+        return x*potencia(x,(n-1))
+
+print ("Ingrese la base: ")
+x = int(input())
+print ("ingrese el exponente: ")
+n = int(input())
+z=potencia(x,n)
+print(z)
