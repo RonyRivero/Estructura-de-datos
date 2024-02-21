@@ -1,0 +1,24 @@
+//Rony Rivero
+#include <iostream>
+using namespace std;
+
+int potencia(int x, int n);
+
+int main()
+{   int x, n;
+    cout << "Ingrese el numero base: ";
+    cin>>x;
+    cout << "Ingrese el exponente: ";
+    cin>>n;
+    cout << "El resultado es: " << potencia(x,n);
+    return 0;
+}
+
+int potencia(int x, int n){
+    if (x == 0){
+        return 1;
+    }
+    else {
+        return x*= potencia(x, n-1);
+    }
+}
