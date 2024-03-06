@@ -1,0 +1,21 @@
+#include <iostream>
+#include "Vector.h"
+#define MAX 10
+using namespace std;
+
+int main()
+{
+    int tamanio, v[MAX], v2[MAX];
+    Vector vector1;
+    cout << "Ingresar el numero de elementos: ";
+    //validando la entrada
+    do {
+        cin >> tamanio;
+    } while (tamanio > MAX || tamanio < 0);
+    vector1.Set_n(tamanio); //cambia del valor del atributo n de la clase Vector
+    vector1.CargarVector(v, tamanio);
+    vector1.MostrarVector(v);
+    cout << "ordenando el vector" << endl;
+    vector1.Ordenar(v);
+    vector1.PromedioVec(v, tamanio);
+}
