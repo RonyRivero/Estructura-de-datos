@@ -1,0 +1,31 @@
+#include <iostream>
+#include "Matriz.h"
+using namespace std;
+#define fila 50
+#define columna 50
+int main() {
+    Matriz mati;
+    float a[fila][columna], b[fila][columna], c[fila][columna], filaA, columnaA_FilaB, ColumnaB;
+    cout << "Ingrese el tamaño de la MATRIZ A" << endl;
+    cout << "fila: ";
+    cin >> filaA;
+    cout << "Columna: ";
+    cin >> columnaA_FilaB;
+    cout << "Ingrese el tamaño de la MATRIZ B" << endl;
+    cout << "fila: ";
+    cin >> columnaA_FilaB;
+    cout << "Columna: ";
+    cin >> ColumnaB;
+    cout << "Ingrese Valores de la Matriz A" << endl;
+    mati.IngresarDatos(a, filaA, columnaA_FilaB);
+    cout << "Ingrese Valores de la Matriz B" << endl;
+    mati.IngresarDatos(b, columnaA_FilaB, ColumnaB);
+    cout << "Matriz A" << endl;
+    mati.MostrarDatos(a, filaA, columnaA_FilaB);
+    cout << "Matriz B" << endl;
+    mati.MostrarDatos(b, columnaA_FilaB, ColumnaB);
+    cout << "El Producto de la Matriz es: " << endl;
+    mati.ProductoMatriz(a, b, c,filaA,columnaA_FilaB,ColumnaB);
+    mati.MostrarDatos(c,filaA,ColumnaB);
+    return 0;
+}
