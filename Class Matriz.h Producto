@@ -1,0 +1,23 @@
+#ifndef PRODUCTO_MATRIZ_H
+#define PRODUCTO_MATRIZ_H
+
+
+class Matriz {
+    private:
+        float Matrix[50][50];
+        int fila;
+        int columna;
+    public:
+        Matriz(void);
+        ~Matriz(void);
+        void Set_fila(int _fila, int _columna);
+        int Get_fila();
+        int Get_columna();
+        void IngresarDatos(float a[50][50],int _fila, int _columna);
+        void MostrarDatos(float a[50][50], int _fila, int _columna);
+        float ProductoMatriz(float a[50][50], float b[50][50], float c[50][50],int _fila_A,int _columna_A_fila_B, int _columna_B);
+
+};
+
+
+#endif //PRODUCTO_MATRIZ_H
