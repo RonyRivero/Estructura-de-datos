@@ -1,0 +1,21 @@
+#pragma once
+#define MAX 20
+class Matriz
+{
+	private:
+		int fil;
+		int col;
+		int M[MAX][MAX];
+	public:
+		Matriz();
+		~Matriz();
+		void Set_fil(int _fil);
+		void Set_col(int _col);
+		int Get_fil();
+		int Get_col();
+		void cargarmat(int M[MAX][MAX]);
+		void mostrarmat(int M[MAX][MAX], int _fil, int _col);
+		float promedio(int M[MAX][MAX], int _fil, int _col);
+		int Mayor(int M[MAX][MAX], int _fil, int _col);
+		void Suma(int a[MAX][MAX],int b[MAX][MAX], int c[MAX][MAX]);
+};
