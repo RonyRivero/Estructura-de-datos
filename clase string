@@ -1,0 +1,28 @@
+//.h
+		string substring(int pos, string name);
+		void Invertir(string name);
+		void palindromo(string name);
+//cpp
+string Cadenas::substring(int pos, string name) {
+	string sub;
+	sub=name.substr(pos, longitud - pos);
+	return sub;
+}
+void Cadenas::Invertir(string name) {
+	char aux;
+	for (int i = 0; i < longitud / 2; i++) {
+		aux = name[i];
+		name[i] = name[longitud - 1 - i];
+		name[longitud - 1 - i] = aux;
+	}
+}
+void Cadenas::palindromo(string name) {
+	for (int i = 0; i < longitud / 2; i++){
+		if (name[i] == name[longitud - 1 - i]) {
+			cout << "Es un palindromo";
+		}
+		else {
+			cout << "no es un palindromo";
+		}
+	}
+}
